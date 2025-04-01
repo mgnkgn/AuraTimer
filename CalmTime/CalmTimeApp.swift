@@ -7,9 +7,24 @@
 
 import SwiftUI
 import SwiftData
+import GoogleMobileAds
+import AppTrackingTransparency
+
+
 
 @main
 struct CalmTimeApp: App {
+	
+	
+	init() {
+		if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+		} else {
+			ATTrackingManager.requestTrackingAuthorization { status in
+				MobileAds.shared.start(completionHandler: nil)
+			}
+		}
+	}
+	
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -22,10 +37,13 @@ struct CalmTimeApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+	
+	@StateObject var themeManager = ThemeManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+				.environmentObject(themeManager)
         }
         .modelContainer(sharedModelContainer)
     }
