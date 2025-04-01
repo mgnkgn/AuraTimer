@@ -9,6 +9,10 @@ AuraTimer is a beautifully designed meditation and focus timer with immersive na
 - 🔄 **Looping Sounds** – Enjoy continuous relaxation without interruptions.
 - 🌙 **Minimal & Intuitive UI** – Simple, elegant, and easy to use.
 
+## 🔒 Privacy
+
+AuraTimer **does not collect any data**. 
+
 ## 📥 Download
 
 AuraTimer is available on the **App Store**. Stay tuned for updates!
